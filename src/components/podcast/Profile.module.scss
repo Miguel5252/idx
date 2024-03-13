@@ -1,0 +1,31 @@
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.2);
+  padding: 8px;
+  border-radius: 2px;
+}
+
+.image{
+  width: 100%
+}
+
+.section{
+  padding: 20px;
+  border-bottom: solid 1px rgb(239, 239, 239);
+}
+
+.title{
+  font-size: larger;
+  font-weight: 600;
+  margin-bottom: 6px;
+
+}
+
+.description{
+  font-style: oblique;
+  color: rgb(56, 56, 56);
+  font-size: smaller;
+
+}

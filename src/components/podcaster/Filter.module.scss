@@ -1,0 +1,30 @@
+.filter_container{
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  gap: 10px;
+  margin-bottom: 40px;
+  margin-right: 40px;;
+}
+
+.filter_number{
+  display: flex;
+  align-items: center;
+  background-color: var(--main-blue-color);
+  color: white;
+  font-weight: 600;
+  padding: 2px 6px 2px 6px;
+  border-radius: 4px;
+  height: 30px;
+}
+
+.filter_input{
+  height: 30px;
+  width: 100%;
+  max-width: 240px;
+  border: solid 1px rgb(204, 204, 204);
+  border-radius: 4px;
+  padding-left: 10px;
+  
+
+}
