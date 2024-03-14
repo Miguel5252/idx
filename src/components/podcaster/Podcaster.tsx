@@ -6,10 +6,13 @@ import PodcastResume from './PodcastResume'
 import styles from './Podcaster.module.scss'
 import Filter from './Filter'
 import { getPodcastsList } from '../../services/itunes.services'
+import useLoadingData from '../../hooks/useLoadingData'
+
 
 function Podcaster() {
   const [filterInput, setFilterInput] = useState('')
-  const {data} = useFetchAndStore(getPodcastsList, 'podcasterList', 24*60*60*1000)
+  const {data, isFetching} = useFetchAndStore(getPodcastsList, 'podcasterList', 24*60*60*1000)
+  useLoadingData(data, isFetching)
 
   const handleChangeFilter = (e: React.ChangeEvent<HTMLInputElement>) => {
     const query = e.target.value

@@ -1,7 +1,9 @@
-import React from 'react'
+import { useParams } from 'react-router-dom'
+import Episode from '../components/episode/Episode'
 
 export default function EpisodePage() {
+  const {podcastId, episodeId} = useParams()
   return (
-    <div>EpisodePage</div>
+    <Episode podcastId={podcastId} episodeId={episodeId}/>
   )
 }

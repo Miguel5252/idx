@@ -33,10 +33,13 @@ export function podcastMapper (data: any): Podcast {
     },
     episodes: episodes.map(episode => (
       {
-        id: episode.episodeGuid,
+        id: episode.trackId,
+        url: episode.episodeUrl,
+        podcastId: episode.collectionId,
         title: episode.trackName,
         date: formatDate(episode.releaseDate),
-        duration: formatDuration(episode.trackTimeMillis)
+        duration: episode.trackTimeMillis ? formatDuration(episode.trackTimeMillis) : "-",
+        description: episode.description
       }
     ))
   }

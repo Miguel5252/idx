@@ -7,9 +7,14 @@ export async function getPodcastsList() {
   return mappedPodcastList
 }
 
-export async function getPodcast(id:string) {
-  const podcastListResponse = await getPodcastById(id)
-  const mappedPodcast= podcastMapper(podcastListResponse)
-  console.log(mappedPodcast)
-  return mappedPodcast
+export async function getPodcast(id: string | undefined) {
+  if (id){
+    const podcastListResponse = await getPodcastById(id)
+    const mappedPodcast= podcastMapper(podcastListResponse)
+    return mappedPodcast
+  }
+  else{
+    console.log("el elemento no ha sido encontrado")
+  }
+ 
 }

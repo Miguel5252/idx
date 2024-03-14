@@ -1,9 +1,13 @@
 import React from 'react'
 import { type EpisodeInfo } from '../../models/podcasts'
 import styles from './EpisodesTable.module.scss'
+import { Link } from 'react-router-dom'
 
+interface EpisodesTableProps {
+  episodes: EpisodeInfo[]
+}
 
-const EpisodesTable: React.FC<EpisodeInfo> = ({episodes}) => {
+const EpisodesTable: React.FC<EpisodesTableProps> = ({episodes}) => {
   return (
     <div className={styles.container}>
     <table className={styles.table}>
@@ -17,11 +21,15 @@ const EpisodesTable: React.FC<EpisodeInfo> = ({episodes}) => {
       <tbody>
         {episodes.map(episode => {
           return (
-          <tr className={styles.tr} key={episode.id}>
-            <td className={`${styles.td} ${styles.title}`}>{episode.title}</td>
-            <td className={styles.td}>{episode.date}</td>
-            <td className={styles.td}>{episode.duration}</td>
-          </tr>
+         
+           <tr key={episode.id} className={styles.tr}>
+              <Link  to={`/podcast/${episode.podcastId}/episode/${episode.id}`}>
+                <td className={`${styles.td} ${styles.title}`}>{episode.title}</td>
+              </Link>
+              <td className={styles.td}>{episode.date}</td>
+              <td className={styles.td}>{episode.duration}</td>
+            </tr>
+          
           )
         })}
       </tbody>

@@ -6,13 +6,15 @@ export interface PodcastResume {
 }
 
 export interface Podcast {
-  profile: {
-    title: string
-    author: string
-    description: string
-    thumbnail: string
-  };
+  profile: Profile
   episodes: EpisodeInfo[]
+}
+
+export interface Profile {
+  title: string
+  author: string
+  description: string
+  thumbnail: string
 }
 
 export interface EpisodeInfo {
@@ -20,4 +22,7 @@ export interface EpisodeInfo {
   date: string
   duration: number
   id: string
+  podcastId: string
+  url: string,
+  description: string,
 }
