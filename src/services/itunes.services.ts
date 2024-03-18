@@ -14,7 +14,7 @@ export async function getPodcast(id: string | undefined) {
     return mappedPodcast
   }
   else{
-    console.log("el elemento no ha sido encontrado")
+    console.log("El elemento no ha sido encontrado")
   }
  
 }

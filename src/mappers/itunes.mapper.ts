@@ -2,7 +2,6 @@ import { PodcastResume, Podcast } from "../models/podcasts"
 import { formatDate, formatDuration } from "../utils/dateAndTime"
 
 export function podcastListMapper (data: any): PodcastResume[]{
-  console.log(data.feed.entry)
   const podcastList = data.feed.entry
   const mappedPodcastList: PodcastResume[] = []
 
@@ -11,7 +10,7 @@ export function podcastListMapper (data: any): PodcastResume[]{
       id: podcast.id.attributes['im:id'],
       title: podcast.title.label,
       author: podcast['im:artist'].label,
-      thumbnail: podcast['im:image'][0].label, 
+      thumbnail: podcast['im:image'][2].label, 
     }
     mappedPodcastList.push(podcastResume)
   });
@@ -23,7 +22,6 @@ export function podcastListMapper (data: any): PodcastResume[]{
 export function podcastMapper (data: any): Podcast {
   const profile = data.results[0]
   const episodes = data.results.slice(1,data.resultCount)
-  console.log(episodes)
   const podcast = {
     profile: {
       title: profile.collectionName,

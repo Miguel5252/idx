@@ -21,17 +21,17 @@ const EpisodesTable: React.FC<EpisodesTableProps> = ({episodes}) => {
       <tbody>
         {episodes.map(episode => {
           return (
-         
-           <tr key={episode.id} className={styles.tr}>
-              <Link  to={`/podcast/${episode.podcastId}/episode/${episode.id}`}>
-                <td className={`${styles.td} ${styles.title}`}>{episode.title}</td>
-              </Link>
-              <td className={styles.td}>{episode.date}</td>
-              <td className={styles.td}>{episode.duration}</td>
-            </tr>
-          
-          )
-        })}
+              <tr key={episode.id} className={styles.tr}>
+                <td className={`${styles.td} ${styles.title}`}>
+                  <Link  to={`/podcast/${episode.podcastId}/episode/${episode.id}`}>
+                    {episode.title}
+                  </Link>
+                </td>
+                <td className={styles.td}>{episode.date}</td>
+                <td className={styles.td}>{episode.duration}</td>
+              </tr>
+            )
+          })}
       </tbody>
   </table>
   </div>

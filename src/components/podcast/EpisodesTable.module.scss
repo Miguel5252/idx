@@ -20,9 +20,12 @@
 .td{
   padding: 8px;
   text-align: left;
- 
   font-size: small;
   color: rgb(45, 45, 45);
+}
+
+.td a{
+  color: var(--main-blue-color)
 }
 
 .tr {
