@@ -15,7 +15,7 @@ const PodcastResume: React.FC<PodcastResumeProps> = ({data}) => {
           <img className={styles.image} src={data.thumbnail} alt={data.title}></img>
         </div>
         <div className={styles.info_container}>
-          <div className={styles.title}>{data.title}</div>
+          <h3 className={styles.title}>{data.title}</h3>
           <div className={styles.author}>Author: {data.author}</div>
         </div>
       </div>
