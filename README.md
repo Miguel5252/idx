@@ -1,30 +1,22 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Podcaster
 
-Currently, two official plugins are available:
+# Stack Utilizado
+- React
+- Vite: Herramienta de construcción rápida y moderna para aplicaciones web.
+- TypeScript: Superset de JavaScript que agrega tipos estáticos opcionales al lenguaje.
+- React Router 5: Para realizar el proyecto en una SPA
+- Tanstack Query: Para manejar la caché y obtención de datos
+- React Redux Toolkit: Para manejar estados globales de la UI.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Instrucciones de Uso
+Modo de Desarrollo
+- Instala las dependencias: npm install
+- Ejecuta la aplicación en modo de desarrollo: npm run dev
+- Abre tu navegador y navega a http://localhost:5173/ para ver la aplicación en modo de desarrollo.
 
-## Expanding the ESLint configuration
+# Modo de Producción
+Instala las dependencias: npm install
+Construye la aplicación para producción: npm run build
+La aplicación compilada estará disponible en el directorio dist. Puedes servir este directorio con cualquier servidor HTTP compatible.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
