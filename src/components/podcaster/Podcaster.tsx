@@ -1,6 +1,5 @@
-
 import PodcastList from './PodcastList'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import useFetchAndStore from '../../hooks/useFetchAndStore'
 import PodcastResume from './PodcastResume'
 import styles from './Podcaster.module.scss'
@@ -12,7 +11,6 @@ function Podcaster() {
   const [filterInput, setFilterInput] = useState('')
   const {data, isFetching} = useFetchAndStore(getPodcastsList, 'podcasterList', 24*60*60*1000)
   useLoadingData(data, isFetching);
-
 
   const handleChangeFilter = (e: React.ChangeEvent<HTMLInputElement>) => {
     const query = e.target.value

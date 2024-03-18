@@ -4,6 +4,7 @@ import { podcastListMapper, podcastMapper } from "../mappers/itunes.mapper"
 export async function getPodcastsList() {
   const podcastListResponse = await getPodcastslist()
   const mappedPodcastList = podcastListMapper(podcastListResponse)
+  console.log(mappedPodcastList)
   return mappedPodcastList
 }
 

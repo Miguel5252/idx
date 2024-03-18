@@ -29,7 +29,7 @@ export function podcastMapper (data: any): Podcast {
       description: episodes[0].description,
       thumbnail: profile.artworkUrl600,
     },
-    episodes: episodes.map(episode => (
+    episodes: episodes.map((episode: any) => (
       {
         id: episode.trackId,
         url: episode.episodeUrl,

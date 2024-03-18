@@ -1,7 +1,7 @@
 
 import { Link } from 'react-router-dom'
 import styles from './Profile.module.scss'
-import { Profile } from '../../models/podcasts'
+import { type Profile } from '../../models/podcasts'
 
 interface ProfilePorps {
   profile: Profile

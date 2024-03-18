@@ -19,7 +19,7 @@ const Episode: React.FC<episodeProps> = ({podcastId, episodeId}) => {
   let content;
 
   if(data){
-    const episode = data.episodes.filter(episode => (episode.id).toString() === episodeId)[0]
+    const episode = data.episodes.filter((episode: { id: string }) => (episode.id).toString() === episodeId)[0]
     content = 
      <>
       <div className={styles.left_panel}>

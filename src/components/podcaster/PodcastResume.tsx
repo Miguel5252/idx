@@ -1,5 +1,5 @@
 import React from 'react'
-import { PodcastResume } from '../../models/podcasts'
+import { type PodcastResume } from '../../models/podcasts'
 import styles from './PodcastResume.module.scss'
 import { Link } from 'react-router-dom'
 
