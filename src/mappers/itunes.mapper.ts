@@ -7,7 +7,7 @@ export function podcastListMapper (data: any): PodcastResume[]{
 
   podcastList.forEach( (podcast: any) => {
     const podcastResume = {
-      id: podcast.id.attributes['im:id'],
+      id: podcast.id.attributes['im:id'].toString(),
       title: podcast.title.label,
       author: podcast['im:artist'].label,
       thumbnail: podcast['im:image'][2].label, 
@@ -31,9 +31,9 @@ export function podcastMapper (data: any): Podcast {
     },
     episodes: episodes.map((episode: any) => (
       {
-        id: episode.trackId,
+        id: episode.trackId.toString(),
         url: episode.episodeUrl,
-        podcastId: episode.collectionId,
+        podcastId: episode.collectionId.toString(),
         title: episode.trackName,
         date: formatDate(episode.releaseDate),
         duration: episode.trackTimeMillis ? formatDuration(episode.trackTimeMillis) : "-",

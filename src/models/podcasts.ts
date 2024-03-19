@@ -20,7 +20,7 @@ export interface Profile {
 export interface EpisodeInfo {
   title: string
   date: string
-  duration: number
+  duration: string
   id: string
   podcastId: string
   url: string,

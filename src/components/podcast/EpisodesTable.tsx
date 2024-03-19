@@ -8,6 +8,7 @@ interface EpisodesTableProps {
 }
 
 const EpisodesTable: React.FC<EpisodesTableProps> = ({episodes}) => {
+  console.log(episodes)
   return (
     <div className={styles.container}>
     <table className={styles.table}>
@@ -26,7 +27,7 @@ const EpisodesTable: React.FC<EpisodesTableProps> = ({episodes}) => {
                   <Link  to={`/podcast/${episode.podcastId}/episode/${episode.id}`}>
                     {episode.title}
                   </Link>
-                </td>
+                </td >
                 <td className={styles.td}>{episode.date}</td>
                 <td className={styles.td}>{episode.duration}</td>
               </tr>

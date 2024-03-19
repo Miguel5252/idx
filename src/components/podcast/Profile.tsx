@@ -16,12 +16,12 @@ const Profile: React.FC<ProfilePorps> = ({profile, id}) => {
         <img className={styles.image} src={profile.thumbnail}></img>
       </div>
       <div className={styles.section}>
-        <div className={styles.title}>{profile.title}</div>
+        <h3 className={styles.title}>{profile.title}</h3>
         <div className={styles.description}>By {profile.author}</div>
       </div>
       <div className={styles.section}>
         <div className={styles.title}>Description</div>
-        <div className={styles.description}>{profile.description}</div>
+        <p className={styles.description}>{profile.description}</p>
       </div>
     </div>
     </Link>

@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { render, screen } from "@testing-library/react";
-import PodcastResume from "./PodcastResume";
+import Profile from "../Profile";
 import { BrowserRouter } from "react-router-dom";
 import { PropsWithChildren } from "react";
 
@@ -14,28 +14,33 @@ describe('PodcastResume Suite', ()=>{
     )
   }
 
-  const dataMock =  { 
-      id: "1535809341",
-      title: "Theeeee Joe Budden Podcast - The Joe Budden Network",
-      author: "The Joe Budden Network",
-      thumbnail: "https://is1-ssl.mzstatic.com/image/thumb/Podcasts113/v4/f2/21/fa/f221fabd-017f-5125-633b-f1fe4f39802a/mza_182995249085044287.jpg/170x170bb.png"
+  const dataMock =  {
+    title: "The Podcast title",
+    author: "Author 1",
+    description: "podcast description...",
+    thumbnail: "https://image.jpg"
     }
 
-  it('renders title, author, image and anchor', () => {
-    render( 
+  it('renders image, title, author, link and description when data is provided', () => {
+    render(
       <WrapperProvider>
-        <PodcastResume data={dataMock}/>
+        <Profile profile={dataMock} id="123"/>
       </WrapperProvider> 
       )
 
     const title = screen.getByRole('heading')
-    const author = screen.getByText(/Author/)
+    const author = screen.getByText(/By/)
     const image = screen.getByRole('img')
     const link = screen.getByRole('link')
-    
+    const description = screen.getByText(/podcast description.../i)
+
     expect(title).toBeDefined()
     expect(author).toBeDefined()
     expect(image).toBeDefined()
     expect(link).toBeDefined()
+    expect(description).toBeDefined()
   })
 })
+
+
+

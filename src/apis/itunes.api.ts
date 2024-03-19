@@ -17,7 +17,6 @@ export async function getPodcastById (id:string){
     const response = await fetch(`${CorsURL}url=${encodeURIComponent('https://itunes.apple.com/lookup?id='+id+'&media=podcast&entity=podcastEpisode&limit=20')}`)
     const stringData = await response.json()
     const data = JSON.parse(stringData.contents)
-    console.log(data)
     return data
   }
   catch (error) {
