@@ -8,7 +8,6 @@ interface EpisodesTableProps {
 }
 
 const EpisodesTable: React.FC<EpisodesTableProps> = ({episodes}) => {
-  console.log(episodes)
   return (
     <div className={styles.container}>
     <table className={styles.table}>

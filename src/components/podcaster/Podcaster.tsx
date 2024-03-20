@@ -32,7 +32,7 @@ function Podcaster() {
         />
       {filteredPodcasts && filteredPodcasts.length > 0 && !isFetching
       ? <PodcastList list={filteredPodcasts}/> 
-      : <div className={styles.no_results}>No se encontraron resultados para esta búsqueda. Prueba a modificar el término de búsqueda.</div>}
+      : !isFetching && <div className={styles.no_results}>No se encontraron resultados para esta búsqueda. Prueba a modificar el término de búsqueda.</div>}
     </div> 
   )
 }

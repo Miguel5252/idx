@@ -15,11 +15,10 @@ const useFetchAndStore = (fetchFn: () => Promise<any>, cacheKey: string, timeToN
       const newData = await fetchFn();
       storageData[cacheKey] = { list: newData, fetchedDate: Date.now() };
       localStorage.setItem('cache_data', JSON.stringify(storageData));
-
       return newData;
     }
   });
-
+  
   return { data, isFetching };
 };
 
