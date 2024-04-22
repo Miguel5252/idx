@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query"
 
+// eslint-disable-next-line
 const useFetchAndStore = (fetchFn: () => Promise<any>, cacheKey: string, timeToNewFetch: number) => {
   const storageData = JSON.parse(localStorage.getItem('cache_data') || '{}');
 
