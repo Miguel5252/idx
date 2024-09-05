@@ -5,7 +5,7 @@ export default function PodcastPage() {
   const {podcastId} = useParams()
   return (
     <div>
-      {podcastId ? <Podcast id={podcastId}/> : <div>el elemento no existe</div>}
+      {podcastId ? <Podcast id={podcastId}/> : <div>El elemento no existe</div>}
     </div>
   )
 }
