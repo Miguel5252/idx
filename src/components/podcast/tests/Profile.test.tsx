@@ -24,7 +24,7 @@ describe('PodcastResume Suite', () => {
     )
 
     const title = screen.getByRole('heading')
-    const author = screen.getByText(/By/)
+    const author = screen.getByText(/By Author 1/i)
     const image = screen.getByRole('img')
     const link = screen.getByRole('link')
     const description = screen.getByText(/podcast description.../i)
