@@ -1,25 +1,24 @@
+const CorsURL = 'https://api.allorigins.win/get?'
 
-const CorsURL ='https://api.allorigins.win/get?'
-
-export async function getPodcastslist (){
+export async function getPodcastslist() {
   try {
     const response = await fetch('https://itunes.apple.com/us/rss/toppodcasts/limit=100/genre=1310/json')
     const data = await response.json()
     return data
-  }
-  catch (error) {
+  } catch (error) {
     console.log(error)
   }
 }
 
-export async function getPodcastById (id:string){
+export async function getPodcastById(id: string) {
   try {
-    const response = await fetch(`${CorsURL}url=${encodeURIComponent('https://itunes.apple.com/lookup?id='+id+'&media=podcast&entity=podcastEpisode&limit=20')}`)
+    const response = await fetch(
+      `${CorsURL}url=${encodeURIComponent('https://itunes.apple.com/lookup?id=' + id + '&media=podcast&entity=podcastEpisode&limit=20')}`
+    )
     const stringData = await response.json()
     const data = JSON.parse(stringData.contents)
     return data
-  }
-  catch (error) {
+  } catch (error) {
     console.log(error)
   }
 }

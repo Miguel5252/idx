@@ -1,5 +1,5 @@
-import { getPodcastslist, getPodcastById } from "../apis/itunes.api"
-import { podcastListMapper, podcastMapper } from "../mappers/itunes.mapper"
+import { getPodcastslist, getPodcastById } from '../apis/itunes.api'
+import { podcastListMapper, podcastMapper } from '../mappers/itunes.mapper'
 
 export async function getPodcastsList() {
   const podcastListResponse = await getPodcastslist()
@@ -8,13 +8,11 @@ export async function getPodcastsList() {
 }
 
 export async function getPodcast(id: string | undefined) {
-  if (id){
+  if (id) {
     const podcastListResponse = await getPodcastById(id)
-    const mappedPodcast= podcastMapper(podcastListResponse)
+    const mappedPodcast = podcastMapper(podcastListResponse)
     return mappedPodcast
+  } else {
+    console.log('El elemento no ha sido encontrado')
   }
-  else{
-    console.log("El elemento no ha sido encontrado")
-  }
- 
 }

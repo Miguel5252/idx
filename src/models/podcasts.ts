@@ -23,6 +23,6 @@ export interface EpisodeInfo {
   duration: string
   id: string
   podcastId: string
-  url: string,
-  description: string,
+  url: string
+  description: string
 }

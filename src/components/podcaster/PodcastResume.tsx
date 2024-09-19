@@ -7,7 +7,7 @@ interface PodcastResumeProps {
   data: PodcastResume
 }
 
-const PodcastResume: React.FC<PodcastResumeProps> = ({data}) => {
+const PodcastResume: React.FC<PodcastResumeProps> = ({ data }) => {
   return (
     <Link to={`/podcast/${data.id}`}>
       <div className={styles.container}>
@@ -15,7 +15,7 @@ const PodcastResume: React.FC<PodcastResumeProps> = ({data}) => {
           <img className={styles.image} src={data.thumbnail} alt={data.title}></img>
         </div>
         <div className={styles.info_container}>
-          <h3 className={styles.title}>{data.title}</h3>
+          <h3 className={styles.title}>{data.title.split('-')[0]}</h3>
           <div className={styles.author}>Author: {data.author}</div>
         </div>
       </div>

@@ -1,16 +1,17 @@
 import styles from './NavBar.module.scss'
 import { Link } from 'react-router-dom'
-import { RootState } from '../../store/store'
-import { useSelector } from 'react-redux'
 import LoadingSpinner from '../ui/spinners/Spinner'
+import { useIsFetching } from '@tanstack/react-query'
 
 export default function NavBar() {
-  const isLoading = useSelector((state: RootState) => state.ui.isLoading)
+  const isLoading = useIsFetching()
   return (
     <div className={styles.container}>
       <div className={styles.navbar}>
-        <Link to={'/'} className={styles.logo}>Podcaster</Link>
-        <div>{isLoading && <LoadingSpinner/>}</div>
+        <Link to={'/'} className={styles.logo}>
+          Podcaster
+        </Link>
+        <div>{isLoading ? <LoadingSpinner /> : null}</div>
       </div>
     </div>
   )
