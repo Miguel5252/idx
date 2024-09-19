@@ -1,29 +1,24 @@
 import { getPodcast } from '../../services/itunes.services'
 import useFetchAndStore from '../../hooks/useFetchAndStore'
 import styles from './Podcast.module.scss'
-import Profile from './Profile'
 import EpisodesTable from './EpisodesTable'
 import { useEffect } from 'react'
 import { FETCH_AFTER } from '../../lib/constants'
+import { useParams } from 'react-router-dom'
 
-interface PodcastProps {
-  id: string
-}
+const Podcast: React.FC = () => {
+  const { podcastId } = useParams()
+  const { data } = useFetchAndStore(() => getPodcast(podcastId), `podcast-${podcastId}`, FETCH_AFTER.ONE_DAY)
 
-const Podcast: React.FC<PodcastProps> = ({ id }) => {
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
-  const { data } = useFetchAndStore(() => getPodcast(id), `podcast-${id}`, FETCH_AFTER.ONE_DAY)
 
   return (
-    <div className={styles.container}>
+    <div>
       {data && (
         <>
-          <div className={styles.left_panel}>
-            <Profile profile={data.profile} id={id} />
-          </div>
-          <div className={styles.right_panel}>
+          <div className={styles.panel}>
             <div className={styles.episode_marker}>Episodes: {data.episodes.length}</div>
             <EpisodesTable episodes={data.episodes} />
           </div>

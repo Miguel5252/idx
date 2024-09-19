@@ -19,7 +19,6 @@ const useFetchAndStore = (fetchFn: () => Promise<any>, cacheKey: string, timeToN
       return newData
     },
   })
-
   return { data, isFetching }
 }
 

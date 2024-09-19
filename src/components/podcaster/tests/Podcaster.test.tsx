@@ -2,7 +2,6 @@ import { describe, it, expect, vi } from 'vitest'
 import { render, screen } from '@testing-library/react'
 import { QueryClient } from '@tanstack/react-query'
 import { Provider } from 'react-redux'
-import { store } from '../../../store/store'
 import Podcaster from '../Podcaster'
 import { QueryClientProvider } from '@tanstack/react-query'
 import React, { PropsWithChildren } from 'react'
@@ -43,9 +42,7 @@ describe('Podcaster suite', async () => {
   const WrapperProvider: React.FC<PropsWithChildren> = ({ children }) => {
     return (
       <BrowserRouter>
-        <Provider store={store}>
-          <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
-        </Provider>
+        <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
       </BrowserRouter>
     )
   }
