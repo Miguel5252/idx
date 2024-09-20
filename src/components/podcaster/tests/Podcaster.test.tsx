@@ -1,7 +1,6 @@
 import { describe, it, expect, vi } from 'vitest'
 import { render, screen } from '@testing-library/react'
 import { QueryClient } from '@tanstack/react-query'
-import { Provider } from 'react-redux'
 import Podcaster from '../Podcaster'
 import { QueryClientProvider } from '@tanstack/react-query'
 import React, { PropsWithChildren } from 'react'
